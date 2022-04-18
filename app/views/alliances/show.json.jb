@@ -1,0 +1,7 @@
+{
+  id: @alliance.id,
+  name: @alliance.name,
+  icon: @alliance.icon,
+  description: @alliance.description,
+  owner_id: @alliance.owner_id
+}

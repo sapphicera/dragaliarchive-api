@@ -1,0 +1,16 @@
+{
+  id: @user.id,
+  username: @user.username,
+  password: @user.password,
+  email: @user.email,
+  icon: @user.icon,
+  ign: @user.ign,
+  alliance_id: @user.alliance_id,
+  level: @user.level,
+  gameid: @user.gameid,
+  description: @user.description,
+  weapon: @user.weapon,
+  element: @user.element,
+  event: @user.event,
+  fight: @user.fight
+}
