@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   post "/alliances" => "alliances#create" # make new alliance
   patch "/alliances/:id" => "alliances#update" # update alliance
   delete "/alliances/:id" => "alliances#destroy" # destroy 
+
+  post "/sessions" => "sessions#create"
 end

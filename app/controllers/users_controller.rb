@@ -12,18 +12,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(
       username: params[:username],
-      password: params[:password],
       email: params[:email],
-      icon: params[:icon],
-      ign: params[:ign],
-      alliance_id: params[:alliance_id],
-      level: params[:level],
-      gameid: params[:gameid],
-      description: params[:description],
-      weapon: params[:weapon],
-      element: params[:element],
-      event: params[:event],
-      fight: params[:fight]
+      password: params[:password],
+      password_confirmation: params[:password_confirmation]
     )
 
     if @user.save
