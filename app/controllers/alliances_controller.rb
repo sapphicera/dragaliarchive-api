@@ -1,6 +1,6 @@
 class AlliancesController < ApplicationController
   def index
-    @alliances = Alliance.all
+    @alliances = Alliance.all.order(:id)
     render template: "alliances/index"
   end
 
