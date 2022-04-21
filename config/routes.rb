@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/users" => "users#index" # show all users
-  get "/users/:id" => "users#show" # show user
+  get "/users/:username" => "users#show" # show user
   post "/users" => "users#create" # make new user
   patch "/users/:id" => "users#update" # update user
   delete "/users/:id" => "users#destroy" # destroy 
