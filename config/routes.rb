@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   delete "/users/:id" => "users#destroy" # destroy 
 
   get "/alliances" => "alliances#index" # show all alliances
-  get "/alliances/:id" => "alliances#show" # show alliance
+  get "/alliances/:name" => "alliances#show" # show alliance
   post "/alliances" => "alliances#create" # make new alliance
   patch "/alliances/:id" => "alliances#update" # update alliance
   delete "/alliances/:id" => "alliances#destroy" # destroy 

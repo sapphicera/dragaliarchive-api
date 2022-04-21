@@ -5,7 +5,7 @@ class AlliancesController < ApplicationController
   end
 
   def show
-    @alliance = Alliance.find_by(id: params[:id])
+    @alliance = Alliance.find_by(name: params[:name])
     render template: "alliances/show"
   end
 
