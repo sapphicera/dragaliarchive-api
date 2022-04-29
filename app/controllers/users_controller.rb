@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
   def index
-    @users = User.all.order(:id)
+    # @users = User.all.order(:id)
+
+    if params[:search_term]
+      @users = User.where("username LIKE ?", "%#{params[:search_term]}%").order(:id)
+    end
+
     render template: "users/index"
   end
 
