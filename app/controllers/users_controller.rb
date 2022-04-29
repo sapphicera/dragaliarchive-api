@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by(id: params[:id])
+    @user = User.find_by(username: params[:username])
     
     @user.username = params[:username] || @user.username
     @user.password = params[:password] || @user.password
