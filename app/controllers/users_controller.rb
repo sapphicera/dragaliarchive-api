@@ -32,12 +32,11 @@ class UsersController < ApplicationController
   def update
     @user = User.find_by(username: params[:username])
     
-    @user.username = params[:username] || @user.username
-    @user.password = params[:password] || @user.password
-    @user.email = params[:email] || @user.email
+    # @user.username = params[:username] || @user.username
+    # @user.password = params[:password] || @user.password
+    # @user.email = params[:email] || @user.email
     @user.icon = params[:icon] || @user.icon
     @user.ign = params[:ign] || @user.ign
-    @user.alliance_id = params[:alliance_id] || @user.alliance_id
     @user.level = params[:level] || @user.level
     @user.gameid = params[:gameid] || @user.gameid
     @user.description = params[:description] || @user.description

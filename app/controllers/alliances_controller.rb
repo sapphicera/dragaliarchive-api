@@ -50,4 +50,23 @@ class AlliancesController < ApplicationController
 
     render json: {message: message}
   end
+
+  def join_alliance
+    @alliance = Alliance.find_by(name: params[:name])
+    if current_user.update!(:alliance_id => @alliance.id)
+      render json: @alliance.as_json
+    else
+      render json: {errors: @alliance.errors.full_messages}, status: 422
+    end
+  end
+
+  def leave_alliance
+    @alliance = Alliance.find_by(name: params[:name])
+    if current_user.update!(:alliance_id => nil)
+      render json: @alliance.as_json
+    else
+      render json: {errors: @alliance.errors.full_messages}, status: 422
+    end
+  end
+
 end

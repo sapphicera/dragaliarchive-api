@@ -5,13 +5,14 @@
     email: user.email,
     icon: user.icon,
     ign: user.ign,
-    alliance_id: user.alliance_id,
     level: user.level,
     gameid: user.gameid,
     description: user.description,
     weapon: user.weapon,
     element: user.element,
     event: user.event,
-    fight: user.fight
+    fight: user.fight,
+    alliance_id: user.alliance_id,
+    alliance: user.alliance
   }
 end

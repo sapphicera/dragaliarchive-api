@@ -4,5 +4,4 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   belongs_to :alliance, optional: true
-  validates_associated :alliance
 end
