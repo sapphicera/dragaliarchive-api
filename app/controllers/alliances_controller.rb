@@ -30,7 +30,7 @@ class AlliancesController < ApplicationController
     @alliance.name = params[:name] || @alliance.name
     @alliance.icon = params[:icon] || @alliance.icon
     @alliance.description = params[:description] || @alliance.description
-    @alliance.owner_id = params[:owner_id] || @alliance.owner_id
+    @alliance.owner_id = User.find_by(username: params[:username]).id || @alliance.owner_id
 
     if @alliance.save
       render template: "alliances/show"
@@ -40,16 +40,13 @@ class AlliancesController < ApplicationController
   end
 
   def destroy
-    alliance = Alliance.find_by(id: params[:id])
+    @alliance = Alliance.find_by(name: params[:name])
 
-    if Alliance.exists?(params[:id])
-      alliance.destroy
-      message = "alliance deleted"
-    else
-      message = "alliance does not exist"
+    if current_user.update!(:alliance_id => nil)
+      @alliance.destroy
     end
 
-    render json: {message: message}
+    render json: {message: "alliance deleted"}
   end
 
   def join_alliance

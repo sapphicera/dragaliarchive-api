@@ -4,4 +4,8 @@ class Alliance < ApplicationRecord
 
   validates :name, presence: true
   validates :description, length: { within: 5..100 }, presence: true
+
+  def owner_username
+    owner = User.find_by(id: owner_id).username
+  end
 end

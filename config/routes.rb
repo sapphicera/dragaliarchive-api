@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "/alliances/:name" => "alliances#show" # show alliance
   post "/alliances" => "alliances#create" # make new alliance
   patch "/alliances/:id" => "alliances#update" # update alliance
-  delete "/alliances/:id" => "alliances#destroy" # destroy
+  delete "/alliances/:name" => "alliances#destroy" # destroy
   
   post "/alliances/:name/join" => "alliances#join_alliance" # join alliance
   delete "/alliances/:name/leave" => "alliances#leave_alliance" # leave alliance

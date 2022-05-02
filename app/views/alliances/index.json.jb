@@ -4,6 +4,6 @@
     name: alliance.name,
     icon: alliance.icon,
     description: alliance.description,
-    owner_id: alliance.owner_id
+    leader: alliance.owner_username
   }
 end
