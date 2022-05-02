@@ -14,10 +14,11 @@ class AlliancesController < ApplicationController
       name: params[:name],
       icon: params[:icon],
       description: params[:description],
-      owner_id: params[:owner_id]
+      owner_id: current_user.id
     )
 
     if @alliance.save
+      current_user.update!(:alliance_id => @alliance.id)
       render template: "alliances/show"
     else
       render json: {errors: @alliance.errors.full_messages}, status: 422

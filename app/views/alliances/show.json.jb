@@ -4,5 +4,6 @@
   icon: @alliance.icon,
   description: @alliance.description,
   owner_id: @alliance.owner_id,
-  users: @alliance.users
+  users: @alliance.users,
+  members: @alliance.users.count
 }
