@@ -26,11 +26,14 @@ class AlliancesController < ApplicationController
   end
 
   def update
-    @alliance = Alliance.find_by(id: params[:id])
+    @alliance = Alliance.find_by(name: params[:name])
     @alliance.name = params[:name] || @alliance.name
     @alliance.icon = params[:icon] || @alliance.icon
     @alliance.description = params[:description] || @alliance.description
-    @alliance.owner_id = User.find_by(username: params[:username]).id || @alliance.owner_id
+    
+    if User.find_by(username: params[:username]).present?
+      @alliance.owner_id = User.find_by(username: params[:username]).id || @alliance.owner_id
+    end
 
     if @alliance.save
       render template: "alliances/show"
