@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   
   post "/alliances/:name/join" => "alliances#join_alliance" # join alliance
   delete "/alliances/:name/leave" => "alliances#leave_alliance" # leave alliance
+  delete "/alliances/:name/kick/:username" => "alliances#kick_user" # kick user from alliance
 
   post "/sessions" => "sessions#create"
 end

@@ -30,7 +30,7 @@ class AlliancesController < ApplicationController
     @alliance.name = params[:name] || @alliance.name
     @alliance.icon = params[:icon] || @alliance.icon
     @alliance.description = params[:description] || @alliance.description
-    
+
     if User.find_by(username: params[:username]).present?
       @alliance.owner_id = User.find_by(username: params[:username]).id || @alliance.owner_id
     end
@@ -64,6 +64,17 @@ class AlliancesController < ApplicationController
   def leave_alliance
     @alliance = Alliance.find_by(name: params[:name])
     if current_user.update!(:alliance_id => nil)
+      render json: @alliance.as_json
+    else
+      render json: {errors: @alliance.errors.full_messages}, status: 422
+    end
+  end
+
+  def kick_user
+    @alliance = Alliance.find_by(name: params[:name])
+    kicked_username = User.find_by(username: params[:username])
+
+    if kicked_username.update!(:alliance_id => nil)
       render json: @alliance.as_json
     else
       render json: {errors: @alliance.errors.full_messages}, status: 422
