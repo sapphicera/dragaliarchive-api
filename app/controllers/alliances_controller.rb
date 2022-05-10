@@ -26,7 +26,7 @@ class AlliancesController < ApplicationController
   end
 
   def update
-    @alliance = Alliance.find_by(name: params[:name])
+    @alliance = Alliance.find_by(id: params[:id])
     @alliance.name = params[:name] || @alliance.name
     @alliance.icon = params[:icon] || @alliance.icon
     @alliance.description = params[:description] || @alliance.description
