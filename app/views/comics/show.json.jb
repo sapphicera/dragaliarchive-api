@@ -1,0 +1,10 @@
+{
+  id: @comic.id,
+  number: @comic.number,
+  enName: @comic.enName,
+  jpName: @comic.jpName,
+  chsName: @comic.chsName,
+  chtName: @comic.chtName,
+  created_at: @comic.created_at,
+  updated_at: @comic.updated_at
+}

@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-
   get "/users" => "users#index" # show all users
   get "/users/:username" => "users#show" # show user
   post "/users" => "users#create" # make new user
@@ -21,4 +18,10 @@ Rails.application.routes.draw do
   delete "/alliances/:name/kick/:username" => "alliances#kick_user" # kick user from alliance
 
   post "/sessions" => "sessions#create"
+
+  get "/comics" => "comics#index" # show all comics
+  get "/comics/:id" => "comics#show" # show comic
+
+  get "/characters" => "characters#index" # show all characters
+  get "/characters/:name" => "characters#show" # show character
 end

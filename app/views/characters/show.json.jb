@@ -1,0 +1,9 @@
+{
+  id: @character.id,
+  id: @character.id,
+  name: @character.name,
+  element: @character.element,
+  unit: @character.unit,
+  created_at: @character.created_at,
+  updated_at: @character.updated_at
+}

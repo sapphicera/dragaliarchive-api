@@ -1,0 +1,8 @@
+@characters.map do |character|
+  {
+    id: character.id,
+    name: character.name,
+    element: character.element,
+    unit: character.unit
+  }
+end

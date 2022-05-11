@@ -1,0 +1,10 @@
+@comics.map do |comic|
+  {
+    id: comic.id,
+    number: comic.number,
+    enName: comic.enName,
+    jpName: comic.jpName,
+    chsName: comic.chsName,
+    chtName: comic.chtName
+  }
+end
