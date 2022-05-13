@@ -19,8 +19,10 @@ Rails.application.routes.draw do
 
   post "/sessions" => "sessions#create"
 
-  get "/comics" => "comics#index" # show all comics
-  get "/comics/:id" => "comics#show" # show comic
+  get "/comics/:language" => "comics#index" # show all comics
+  get "/comics/:language/:id" => "comics#show" # show comic
+  # get "/comics" => "comics#index" # show all comics
+  # get "/comics/:id" => "comics#show" # show comic
 
   get "/characters" => "characters#index" # show all characters
   get "/characters/:name" => "characters#show" # show character

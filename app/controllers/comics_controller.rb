@@ -1,12 +1,10 @@
 class ComicsController < ApplicationController
   def index
     # @comics = Comic.all
-
-    @comics = Comic.all.order(:id)
     # if params[:search_term]
     #   @comics = Comic.where("username LIKE ?", "%#{params[:search_term]}%").order(:id)
     # end
-
+    @comics = Comic.all.order(:id)
     render template: "comics/index"
   end
 
