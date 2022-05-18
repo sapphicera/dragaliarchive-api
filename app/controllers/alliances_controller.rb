@@ -5,7 +5,18 @@ class AlliancesController < ApplicationController
   end
 
   def show
-    @alliance = Alliance.find_by(name: params[:name])
+    # @alliance = Alliance.find_by(name: params[:name])
+    
+    # filtered_name = params[:name].gsub!('-', ' ')
+    # @alliance = Alliance.find_by_name(filtered_name)
+
+    if Alliance.find_by({ name: params[:name] })
+      @alliance = Alliance.find_by({ name: params[:name] })
+    else
+      filtered_name = params[:name].gsub!('-', ' ')
+      @alliance = Alliance.find_by({ name: filtered_name })
+    end
+
     render template: "alliances/show"
   end
 
@@ -80,5 +91,4 @@ class AlliancesController < ApplicationController
       render json: {errors: @alliance.errors.full_messages}, status: 422
     end
   end
-
 end
